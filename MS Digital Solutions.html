@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MS Digital Solutions | Websites, Web Apps &amp; AI Solutions for Growing Businesses</title>
+<meta name="description" content="MS Digital Solutions, founded by Mohammad Sarfaraz, builds websites, web applications, AI solutions and custom digital products around your business requirements.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MS Digital Solutions">
+<meta property="og:description" content="I understand your requirement and build the digital solution around it.">
+<meta property="og:image" content="https://example.com/og-image.png">
+<meta name="theme-color" content="#0c0e13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e9b44c'/%3E%3Ctext x='16' y='22' font-size='15' font-weight='700' text-anchor='middle' fill='%230c0e13' font-family='sans-serif'%3EMS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0e13;--bg2:#12151c;--card:#161a22;--line:#262b36;--text:#f3f1ec;--mut:#a3a8b3;--acc:#e9b44c;--accd:#0c0e13;
+--hf:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--bf:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+--pad:clamp(20px,5vw,40px);--nav:64px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + 8px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%;height:auto}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--bf);overflow-x:hidden;padding-bottom:84px}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--hf);line-height:1.08;margin:0;letter-spacing:-.02em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+section{padding:72px 0;position:relative}
+.h2{font-size:clamp(2rem,7vw,3.4rem);font-weight:800;max-width:16ch}
+.lead{color:var(--mut);font-size:1.05rem;max-width:56ch;margin-top:16px}
+.sec-head{margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font:600 1rem var(--bf);border:1px solid var(--line);color:var(--text);background:transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{border-color:var(--acc);transform:translateY(-2px)}
+.btn.pri{background:var(--acc);color:var(--accd);border-color:var(--acc)}
+.btn.pri:hover{background:#f2c46a}
+.skip{position:absolute;left:-999px;top:8px;background:var(--acc);color:var(--accd);padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(12,14,19,.88);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav{height:var(--nav);display:flex;align-items:center;justify-content:space-between}
+.logo{font:800 1.05rem var(--hf);letter-spacing:-.01em;display:flex;align-items:center;gap:10px;min-height:44px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--acc);color:var(--accd);display:grid;place-items:center;font:800 .78rem var(--hf);font-style:normal}
+.links{display:none}
+.burger{width:48px;height:48px;border:0;background:none;color:var(--text);display:grid;place-items:center;cursor:pointer;margin-right:-10px}
+.burger span,.burger span::before,.burger span::after{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:.25s;position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.menu{position:fixed;inset:calc(var(--nav) + env(safe-area-inset-top,0px)) 0 0 0;background:var(--bg);padding:16px var(--pad) 32px;display:flex;flex-direction:column;gap:4px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.25s;overflow-y:auto}
+.menu.open{transform:none;opacity:1;visibility:visible}
+.menu a{font:700 1.6rem var(--hf);padding:14px 0;border-bottom:1px solid var(--line);min-height:56px}
+.menu .btn{margin-top:20px;border:0;font-size:1rem}
+
+/* HERO */
+.hero{padding:calc(var(--nav) + 40px) 0 56px;min-height:min(100svh,880px);display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-60px;background:radial-gradient(circle,rgba(233,180,76,.2),transparent 65%);animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate(-40px,60px)}}
+.hero .wrap{display:grid;gap:44px;position:relative}
+.hero h1{font-size:clamp(2.5rem,11vw,5rem);font-weight:800;max-width:13ch}
+.hero .sub{font-size:1.12rem;color:var(--mut);margin-top:20px;max-width:46ch}
+.tags{margin-top:18px;color:var(--text);font-weight:500;font-size:.95rem;opacity:.9}
+.cta-row{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.cta-row .btn{width:100%}
+.stage{position:relative;height:230px;max-width:460px;width:100%}
+.fc{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.fc b{display:block;font:700 .8rem var(--hf);margin-bottom:10px}
+.bar{height:7px;border-radius:4px;background:var(--line);margin-top:7px}
+.bar.a{background:var(--acc);width:60%}
+.c1{left:0;top:6px;width:58%;animation:fl 7s ease-in-out infinite}
+.c2{right:0;top:60px;width:50%;animation:fl 8s ease-in-out -2s infinite}
+.c3{left:12%;bottom:0;width:52%;animation:fl 9s ease-in-out -4s infinite}
+.chat{background:var(--bg2);border-radius:10px;padding:8px 10px;font-size:.75rem;color:var(--mut);margin-top:6px}
+.chat.me{background:var(--acc);color:var(--accd);margin-left:24px;font-weight:600}
+.dots{display:flex;gap:5px;margin-bottom:10px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.link-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-9px)}}
+
+/* ABOUT */
+.about{background:var(--bg2)}
+.about .wrap{display:grid;gap:28px}
+.about p+p{margin-top:16px}
+.about .txt{color:#d4d2cd;max-width:62ch}
+.about .sign{margin-top:24px;color:var(--mut);font-size:.95rem}
+.about .sign b{color:var(--text)}
+.txtlink{display:inline-flex;align-items:center;min-height:48px;color:var(--acc);font-weight:600;margin-top:8px}
+.txtlink:hover{text-decoration:underline}
+
+/* GRIDS & CARDS */
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:#3a4150}
+.card h3{font-size:1.4rem;margin:16px 0 10px;font-weight:700}
+.card p{color:var(--mut)}
+.ico{width:46px;height:46px;border-radius:14px;background:rgba(233,180,76,.12);color:var(--acc);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding:0;list-style:none}
+.chips li{font-size:.82rem;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.card.open-card{border-style:dashed;background:transparent}
+.card.open-card .btn{margin-top:20px}
+
+/* PROJECTS */
+.proj{display:block;padding:0;overflow:hidden}
+.shot{aspect-ratio:16/10;background:var(--bg2);overflow:hidden;position:relative}
+.shot img,.mock{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.proj:hover .shot img,.proj:hover .mock{transform:scale(1.05)}
+.mock{padding:14px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(160deg,#1c2130,#12151c)}
+.mock .top{display:flex;gap:5px}.mock .top i{width:8px;height:8px;border-radius:50%;background:#3a4150}
+.mock .hd{font:800 clamp(1.4rem,6vw,2rem) var(--hf);margin-top:8px}
+.mock .bar{margin:0;width:70%}.mock .bar.a{width:34%;height:12px;border-radius:7px;margin-top:6px}
+.badge{position:absolute;left:14px;top:14px;font:600 .72rem var(--bf);letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(12,14,19,.85);border:1px solid var(--line);display:flex;align-items:center;gap:7px}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.badge.progress::before{background:transparent;border:1.5px solid var(--acc)}
+.pinfo{padding:22px 24px 26px}
+.pinfo small{color:var(--mut);display:block;margin-bottom:6px}
+.pinfo h3{font-size:1.5rem;font-weight:700}
+.pinfo p{color:var(--mut);margin-top:8px}
+.pinfo .go{display:inline-block;margin-top:16px;color:var(--acc);font-weight:600}
+
+/* WHY */
+.why{background:var(--bg2)}
+.why .card{padding:22px}.why .card h3{font-size:1.2rem;margin:14px 0 8px}
+
+/* STEPS */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.step{display:grid;grid-template-columns:44px 1fr;gap:18px;padding-bottom:30px;position:relative}
+.step:not(:last-child)::before{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;background:linear-gradient(var(--acc),var(--line))}
+.num{width:44px;height:44px;border-radius:50%;background:var(--bg);border:2px solid var(--acc);color:var(--acc);display:grid;place-items:center;font:700 .95rem var(--hf);z-index:1}
+.step h3{font-size:1.3rem;margin:6px 0 6px}.step p{color:var(--mut)}
+
+/* TESTIMONIALS */
+.slider{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--pad) * -1);padding:0 var(--pad)}
+.slider::-webkit-scrollbar{display:none}
+.quote{flex:0 0 100%;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.quote blockquote{margin:0;font:500 1.2rem/1.5 var(--hf)}
+.quote figcaption{color:var(--mut);font-size:.92rem}.quote figcaption b{color:var(--text);display:block}
+.ph{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--acc);border:1px dashed var(--acc);border-radius:999px;padding:3px 10px;margin-bottom:14px;align-self:flex-start}
+
+/* CONTACT */
+.contact{background:var(--bg2)}
+.contact .wrap{display:grid;gap:36px}
+.contact h2{font-size:clamp(2.4rem,10vw,4.4rem);font-weight:800}
+.methods{display:grid;gap:10px;margin-top:28px}
+.method{display:flex;align-items:center;gap:14px;min-height:56px;padding:10px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card);transition:border-color .2s}
+.method:hover{border-color:var(--acc)}
+.method .ico{width:38px;height:38px;border-radius:12px;flex:none}
+.method span{display:block;font-size:.8rem;color:var(--mut);line-height:1.3}.method b{font-weight:600;overflow-wrap:anywhere}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;display:grid;gap:16px}
+label{display:grid;gap:7px;font-weight:500;font-size:.92rem}
+input,select,textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:400 1rem var(--bf)}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+.note{font-size:.88rem;color:var(--mut);min-height:1.3em}
+.note.err{color:#f1a39a}
+
+/* FOOTER */
+footer{padding:48px 0 32px;border-top:1px solid var(--line)}
+.fgrid{display:grid;gap:28px}
+.fgrid p{color:var(--mut);max-width:34ch;margin-top:8px}
+.flinks{display:flex;flex-wrap:wrap;gap:4px 22px;list-style:none;margin:0;padding:0}
+.flinks a{display:inline-flex;align-items:center;min-height:44px;color:var(--mut)}.flinks a:hover{color:var(--text)}
+.legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:.88rem;display:grid;gap:4px}
+
+/* FLOAT WA */
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:var(--acc);color:var(--accd);display:grid;place-items:center;z-index:40;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}.wa svg{width:28px;height:28px;fill:currentColor}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+@media (min-width:600px){
+ .cta-row{flex-direction:row}.cta-row .btn{width:auto}
+ .grid.two,.grid.why-g{grid-template-columns:repeat(2,1fr)}
+ .methods{grid-template-columns:1fr 1fr}
+}
+@media (min-width:768px){
+ :root{--nav:72px}section{padding:104px 0}
+ .quote{flex-basis:calc(50% - 8px)}.slider{margin:0;padding:0}
+ .about .wrap{grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+ .fgrid{grid-template-columns:1.4fr 1fr 1fr}
+ .legal{display:flex;justify-content:space-between}
+}
+@media (min-width:1024px){
+ .burger,.menu{display:none}
+ .links{display:flex;align-items:center;gap:2px}
+ .links a{padding:0 14px;min-height:44px;display:inline-flex;align-items:center;color:var(--mut);font-weight:500;font-size:.95rem;transition:color .2s}
+ .links a:hover{color:var(--text)}
+ .links .btn{min-height:44px;margin-left:12px;color:var(--accd);padding:0 22px}
+ .hero .wrap{grid-template-columns:1.15fr 1fr;align-items:center;gap:56px}
+ .stage{height:420px;max-width:none}
+ .fc{padding:20px;border-radius:22px}.fc b{font-size:.95rem}.chat{font-size:.85rem}
+ .grid.svc{grid-template-columns:repeat(2,1fr)}
+ .grid.why-g{grid-template-columns:repeat(3,1fr)}
+ .steps{grid-template-columns:repeat(4,1fr);gap:28px}
+ .step{grid-template-columns:1fr;padding-bottom:0;gap:14px}
+ .step:not(:last-child)::before{left:56px;right:-28px;top:21px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--acc),var(--line))}
+ .quote{flex-basis:calc(33.333% - 11px)}
+ .contact .wrap{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+ body{padding-bottom:0}
+}
+@media (min-width:1280px){.hero .wrap{gap:96px}.stage{height:480px}}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="top">
+ <div class="wrap nav">
+  <a class="logo" href="#hero" aria-label="MS Digital Solutions, home"><i>MS</i>MS Digital Solutions</a>
+  <nav class="links" aria-label="Primary">
+   <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#why">Why Me</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+   <a class="btn pri" href="#contact">Let's Work Together</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+ </div>
+ <nav class="menu" id="menu" aria-label="Mobile">
+  <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#why">Why Me</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+  <a class="btn pri" href="#contact">Let's Work Together</a>
+ </nav>
+</header>
+
+<main id="main">
+<section class="hero" id="hero">
+ <div class="wrap">
+  <div>
+   <h1>I Build Digital Solutions for Growing Businesses.</h1>
+   <p class="sub">Websites, web applications, AI solutions and custom digital products — built around your business requirements.</p>
+   <p class="tags">Websites • Web Apps • AI Solutions • Custom Digital Products</p>
+   <div class="cta-row">
+    <a class="btn pri" href="#projects">View My Work</a>
+    <a class="btn" href="#contact">Let's Work Together</a>
+   </div>
+  </div>
+  <div class="stage" aria-hidden="true">
+   <svg class="link-svg" viewBox="0 0 400 420" preserveAspectRatio="none"><path d="M120 120 C 200 140, 260 120, 300 190 M180 330 C 220 270, 260 250, 290 230" fill="none" stroke="#e9b44c" stroke-opacity=".4" stroke-dasharray="4 6" vector-effect="non-scaling-stroke"/></svg>
+   <div class="fc c1"><div class="dots"><i></i><i></i><i></i></div><b>Your website</b><div class="bar a"></div><div class="bar"></div><div class="bar" style="width:80%"></div></div>
+   <div class="fc c2"><b>Booking</b><div class="bar a" style="width:40%"></div><div class="bar"></div><div class="bar" style="width:70%"></div></div>
+   <div class="fc c3"><b>AI assistant</b><div class="chat">How can I help?</div><div class="chat me">Book a visit</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap">
+  <h2 class="h2 rv">More Than Just Websites.</h2>
+  <div class="txt rv">
+   <p>I'm Mohammad Sarfaraz, a developer focused on turning ideas and business requirements into practical digital solutions.</p>
+   <p>I work with small businesses, startups and growing businesses to create modern digital products that fit their specific needs.</p>
+   <p>Whether it's a business website, web application, AI-powered product or something completely different, I start with the requirement and build the solution around it.</p>
+   <a class="txtlink" href="#contact">Let's Build Something →</a>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="sec-head rv"><h2 class="h2">What I Can Build</h2><p class="lead">From a simple online presence to a custom digital product, I build solutions around what your business actually needs.</p></div>
+  <div class="grid svc" id="svc"></div>
+ </div>
+</section>
+
+<section class="projects" id="projects" style="background:var(--bg2)">
+ <div class="wrap">
+  <div class="sec-head rv"><h2 class="h2">Things I've Built</h2><p class="lead">A selection of client work and projects built around real-world requirements.</p></div>
+  <div class="grid two" id="proj"></div>
+ </div>
+</section>
+
+<section class="why" id="why" style="background:var(--bg)">
+ <div class="wrap">
+  <div class="sec-head rv"><h2 class="h2">Why Work With Me?</h2></div>
+  <div class="grid why-g" id="whyg"></div>
+ </div>
+</section>
+
+<section id="process" style="background:var(--bg2)">
+ <div class="wrap">
+  <div class="sec-head rv"><h2 class="h2">From Idea to Launch.</h2></div>
+  <ol class="steps" id="steps"></ol>
+ </div>
+</section>
+
+<section id="testimonials">
+ <div class="wrap">
+  <div class="sec-head rv"><h2 class="h2">What Clients Say</h2></div>
+  <div class="slider" id="tests" tabindex="0" aria-label="Client testimonials"></div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div>
+   <h2 class="rv">Have an Idea?<br>Let's Build It.</h2>
+   <p class="lead">Tell me what you're trying to build. Whether it's a website, web application, AI solution or something completely custom, let's turn your idea into a digital solution.</p>
+   <div class="methods" id="methods"></div>
+  </div>
+  <form id="form" novalidate>
+   <label>Name<input name="name" autocomplete="name" required></label>
+   <label>Email<input name="email" type="email" autocomplete="email" required></label>
+   <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+   <label>What do you want to build?
+    <select name="type"><option>Website</option><option>Web application</option><option>AI solution</option><option>Something custom</option><option>Not sure yet</option></select>
+   </label>
+   <label>Tell me about your requirement<textarea name="message" required></textarea></label>
+   <button class="btn pri" type="submit">Start a Conversation →</button>
+   <p class="note" id="note" role="status" aria-live="polite"></p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><a class="logo" href="#hero"><i>MS</i>MS Digital Solutions</a><p>Digital solutions for businesses, startups and growing companies.</p></div>
+   <ul class="flinks" id="flinks" aria-label="Footer"><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+   <ul class="flinks" id="socials" aria-label="Social"></ul>
+  </div>
+  <div class="legal"><span>© 2026 MS Digital Solutions. All rights reserved.</span><span>Founded by Mohammad Sarfaraz</span></div>
+ </div>
+</footer>
+
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-1.9 1.3-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.200-5-4.400-.2-.2-1.200-1.600-1.200-3s.7-2.100 1-2.400c.2-.3.5-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .600l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2 1.300 2.300 1.400.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.700-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg></a>
+
+<script>
+/* ============ EDIT ME: all site content lives here ============ */
+const CONFIG = {
+  whatsapp: "9391530449",            // digits only, with country code
+  email: "sarfarazzz986@gmail.com",
+  phone: "9391530449",
+  instagram: "https://www.instagram.com/ms_digital_solutionss/",
+  linkedin: "https://linkedin.com/in/your-profile",
+  github: "https://github.com/your-handle",
+  formEndpoint: ""                      // e.g. a Formspree / Web3Forms URL. Empty = form not connected yet.
+};
+
+const PROJECTS = [
+  { name: "CMR Jewellers", category: "Jewellery Business", type: "Client Project", status: "Completed",
+    image: "./images/cmr_jewel.png", url: "https://cmr-jewellers.netlify.app/", description: "This is CMR jewellers" },
+  { name: "Doctor Website", category: "Healthcare", type: "Demo Project", status: "In Progress",
+    image: "", url: "https://example.com/doctor-website", description: "" }
+  // Add more: { name, category, type, status, image: "photo-url", url, description }
+];
+
+const TESTIMONIALS = [
+  { placeholder: true, quote: "Ms Digital Solutions has transformed our online presence and significantly increased our sales.", name: "Haneef", role: "CMR Jewellers" }
+  // Add more testimonials here. Set placeholder:false once real.
+];
+
+const SERVICES = [
+  { t: "Websites", d: "Modern, responsive websites that help businesses establish a strong online presence.",
+    ex: ["Business","Restaurant","Clinic","School","Jewellery","Portfolio"], i: "M3 5h18v14H3zM3 9h18" },
+  { t: "Web Applications", d: "Custom web applications designed around your business processes, customers and requirements.",
+    ex: ["Dashboards","Management systems","Customer portals","Booking systems","Internal tools"], i: "M4 4h7v7H4zM13 4h7v4h-7zM13 11h7v9h-7zM4 14h7v6H4z" },
+  { t: "AI Solutions", d: "AI-powered products and integrations that bring intelligent capabilities to modern businesses.",
+    ex: ["AI assistants","Chatbots","AI-powered apps","Integrations","Automation"], i: "M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM19 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" },
+  { t: "Custom Digital Solutions", d: "Have a different idea? Tell me what you need and I'll help turn the requirement into a practical digital solution.",
+    cta: true, i: "M12 5v14M5 12h14" }
+];
+
+const WHY = [
+  ["Requirement First","I understand what you actually need before deciding what to build.","M9 11l3 3 8-8M20 12v7H4V5h10"],
+  ["Custom Solutions","Your solution is built around your business rather than forcing your requirements into a generic template.","M4 8l8-4 8 4-8 4zM4 12l8 4 8-4M4 16l8 4 8-4"],
+  ["Direct Communication","You work directly with the person building your product, keeping communication simple and transparent.","M4 5h16v11H9l-5 4z"],
+  ["Modern & Scalable","I build with future improvements and business growth in mind.","M4 18l6-6 4 4 6-8M15 8h5v5"],
+  ["Problem-Solving Mindset","I focus on solving the underlying problem, not simply building something that looks good.","M12 3a6 6 0 0 0-3 11v3h6v-3a6 6 0 0 0-3-11zM10 21h4"],
+  ["Long-Term Support","The relationship doesn't have to end when the initial project is launched.","M12 21s-8-5-8-11a4.500 4.500 0 0 1 8-2 4.500 4.500 0 0 1 8 2c0 6-8 11-8 11z"]
+];
+
+const STEPS = [
+  ["Tell Me Your Requirement","Share your idea, requirement or business problem."],
+  ["Let's Discuss","We understand what you need and determine the right approach."],
+  ["I Build","I design and develop the solution around your requirements."],
+  ["Launch","Once everything is ready, your digital solution goes live."]
+];
+/* ================================================================ */
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = (d) => `<span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg></span>`;
+const wa = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Hi, I'd like to discuss a project.")}`;
+
+$('#svc').innerHTML = SERVICES.map(s => `
+ <article class="card rv ${s.cta ? 'open-card' : ''}">${icon(s.i)}<h3>${esc(s.t)}</h3><p>${esc(s.d)}</p>
+ ${s.ex ? `<ul class="chips">${s.ex.map(e => `<li>${esc(e)}</li>`).join('')}</ul>` : `<a class="btn pri" href="#contact">Tell me what you need</a>`}</article>`).join('');
+
+const statusClass = (s) => s.toLowerCase().replace(/\s+/g, '');
+$('#proj').innerHTML = PROJECTS.map(p => {
+  const media = p.image
+    ? `<img src="${esc(p.image)}" alt="Website preview of ${esc(p.name)}" loading="lazy" width="800" height="500">`
+    : `<div class="mock" role="img" aria-label="Preview placeholder for ${esc(p.name)}"><div class="top"><i></i><i></i><i></i></div><div class="hd">${esc(p.name)}</div><div class="bar"></div><div class="bar" style="width:50%"></div><div class="bar a"></div></div>`;
+  return `<a class="card proj rv" href="${esc(p.url)}" target="_blank" rel="noopener" aria-label="${esc(p.name)} (opens in a new tab)">
+   <div class="shot">${media}<span class="badge ${statusClass(p.status)}">${esc(p.type)} · ${esc(p.status)}</span></div>
+   <div class="pinfo"><small>${esc(p.category)}</small><h3>${esc(p.name)}</h3>${p.description ? `<p>${esc(p.description)}</p>` : ''}<span class="go">View Website ↗</span></div></a>`;
+}).join('');
+
+$('#whyg').innerHTML = WHY.map(w => `<article class="card rv">${icon(w[2])}<h3>${esc(w[0])}</h3><p>${esc(w[1])}</p></article>`).join('');
+$('#steps').innerHTML = STEPS.map((s, i) => `<li class="step rv"><span class="num">0${i + 1}</span><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div></li>`).join('');
+$('#tests').innerHTML = TESTIMONIALS.map(t => `<figure class="card quote">${t.placeholder ? '<span class="ph">TESTIMONIALS</span>' : ''}<blockquote>“${esc(t.quote)}”</blockquote><figcaption><b>${esc(t.name)}</b>${esc(t.role)}</figcaption></figure>`).join('');
+
+const ci = {
+  w: "M4 20l1.2-4A8 8 0 1 1 8 19z", e: "M3 6h18v12H3zM3 7l9 7 9-7", p: "M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z", i: "M4 4h16v16H4zM12 8.500a3.500 3.500 0 1 0 0 7 3.500 3.500 0 0 0 0-7z"
+};
+const methods = [
+  ["WhatsApp", "Chat with me", wa, ci.w, true], ["Email", CONFIG.email, `mailto:${CONFIG.email}`, ci.e],
+  ["Phone", CONFIG.phone, `tel:${CONFIG.phone.replace(/\s/g, '')}`, ci.p], ["Instagram", "Message on Instagram", CONFIG.instagram, ci.i, true]
+];
+$('#methods').innerHTML = methods.map(m => `<a class="method" href="${esc(m[2])}" ${m[4] ? 'target="_blank" rel="noopener"' : ''}>${icon(m[3])}<div><span>${m[0]}</span><b>${esc(m[1])}</b></div></a>`).join('');
+$('#socials').innerHTML = [["Instagram", CONFIG.instagram], ["LinkedIn", CONFIG.linkedin], ["GitHub", CONFIG.github]].map(s => `<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${s[0]}</a></li>`).join('');
+$('#wa').href = wa;
+
+/* Nav */
+const burger = $('#burger'), menu = $('#menu'), header = $('header');
+const setMenu = (o) => { menu.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); burger.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); document.body.style.overflow = o ? 'hidden' : ''; };
+burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+const onScroll = () => header.classList.toggle('scrolled', scrollY > 12);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+/* Reveal */
+const els = document.querySelectorAll('.rv');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  els.forEach(el => io.observe(el));
+} else els.forEach(el => el.classList.add('in'));
+
+/* Form: only sends if CONFIG.formEndpoint is set */
+$('#form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, note = $('#note'); note.className = 'note';
+  if (!f.name.value.trim() || !f.email.validity.valid || !f.message.value.trim()) { note.classList.add('err'); note.textContent = 'Please add your name, a valid email and your requirement.'; return; }
+  if (!CONFIG.formEndpoint) { note.classList.add('err'); note.textContent = 'This form is not connected yet. Please use WhatsApp or email above.'; return; }
+  try {
+    const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(f))) });
+    if (!r.ok) throw 0; f.reset(); note.textContent = 'Thanks, your message was sent. I will get back to you soon.';
+  } catch { note.classList.add('err'); note.textContent = 'Could not send. Please try WhatsApp or email instead.'; }
+});
+</script>
+</body>
+</html>
